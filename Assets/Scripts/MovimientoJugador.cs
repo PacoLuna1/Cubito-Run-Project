@@ -36,13 +36,13 @@ public class MovimientoJugador : MonoBehaviour {
             if (FindObjectOfType<ColisionJugador>().movimientoSalto == 1  )
             {
                 rb.AddForce(0, MovimientoArriba * Time.deltaTime, 0, ForceMode.VelocityChange);
-                Debug.Log("Pude saltar");
+                
                     
             }
             if(FindObjectOfType<ColisionJugador>().movimientoSalto == 2)
             {
                 rb.AddForce(0, MovimientoArriba * Time.deltaTime, 0, ForceMode.VelocityChange);
-                Debug.Log("Pude saltar");
+                
             }
             
 

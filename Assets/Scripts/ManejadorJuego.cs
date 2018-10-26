@@ -16,7 +16,7 @@ public class ManejadorJuego : MonoBehaviour {
         if(JuegoTermino == false)
         {
             JuegoTermino = true;
-            Debug.Log("Game Over");
+            
             Invoke("Restart", restartDelay);
         }
         
