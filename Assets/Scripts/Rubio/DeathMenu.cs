@@ -17,9 +17,6 @@ public class DeathMenu : MonoBehaviour {
 	void Update () {
         if (!isShowed)
             return;
-            
-       transition += Time.deltaTime;
-       background.color = Color.Lerp(new Color(0, 0, 0), Color.black, transition);
 	}
 
     public void ToggleEndMenu (float score)
@@ -31,11 +28,11 @@ public class DeathMenu : MonoBehaviour {
 
     public void Restart()
     {
-        SceneManager.LoadScene(SceneManager.GetActiveScene().name);
+        SceneManager.LoadScene("Endless");
     }
 
     public void ToMenu()
     {
-        SceneManager.LoadScene("Menu_rubio");
+        SceneManager.LoadScene("Menu");
     }
 }

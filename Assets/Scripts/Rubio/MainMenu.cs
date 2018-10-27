@@ -9,11 +9,11 @@ public class MainMenu : MonoBehaviour {
 
 	// Use this for initialization
 	void Start () {
-       highscoreText.text = "Highscore : " + (int)PlayerPrefs.GetFloat ("Highscore");
+       //highscoreText.text = "Highscore : " + (int)PlayerPrefs.GetFloat ("Highscore");
     }
 	
     public void ToGame()
     {
-        SceneManager.LoadScene("Game");
+     //   SceneManager.LoadScene("Endless");
     }
 }

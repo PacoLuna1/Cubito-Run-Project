@@ -38,7 +38,7 @@ public class Score : MonoBehaviour {
         if (difficultyLevel <= 5)
             GetComponent<PlayerMotor>().SetSpeed(difficultyLevel);
         else
-            GetComponent<PlayerMotor>().SetSpeed(difficultyLevel * 1.5f);
+            GetComponent<PlayerMotor>().SetSpeed(difficultyLevel * 2.0f);
 
         Debug.Log(difficultyLevel);
     }
