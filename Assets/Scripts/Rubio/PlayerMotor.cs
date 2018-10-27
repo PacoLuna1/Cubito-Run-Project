@@ -3,10 +3,11 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public class PlayerMotor : MonoBehaviour {
+    public Rigidbody player;
     private CharacterController controller;
     private Vector3 moveVector;
-    private float verticalVelocity = 0.0f;
-    private float speed = 5.0f;
+    private float verticalVelocity = -1.0f;
+    private float speed = 10.0f;
     private float gravity = 12.0f;
     private float animationDuration = 3.0f;
     private bool isDead = false;
@@ -16,21 +17,22 @@ public class PlayerMotor : MonoBehaviour {
 	void Start () {
         controller = GetComponent<CharacterController>();
         startTime = Time.time;
-	}
+    }
 	
 	// Update is called once per frame
 	void Update () {
-      
-        if( Time.time - startTime < animationDuration)
+
+        if (Time.time - startTime < animationDuration)
         {
             controller.Move(Vector3.forward * speed * Time.deltaTime);
             return;
-        }else
+        } else
         {
+            Debug.Log("Que onda");
 
             if (isDead)
                 return;
-
+            Debug.Log("Que rollo");
             moveVector = Vector3.zero;
 
             if (controller.isGrounded)
@@ -44,6 +46,7 @@ public class PlayerMotor : MonoBehaviour {
 
             // X value Left Rigth Desktop
             moveVector.x = Input.GetAxisRaw("Horizontal") * speed;
+
             // X value Left Rigth Phone
             if (Input.GetMouseButton(0))
             {
@@ -56,22 +59,23 @@ public class PlayerMotor : MonoBehaviour {
 
             // Y value Up Down
             moveVector.y = verticalVelocity;
+
+
             // Z value Foward Backward Desktop
             moveVector.z = speed;
             controller.Move(moveVector * Time.deltaTime);
-          
         }
     }
 
     public void SetSpeed(float modifier)
     {
-        speed = 5.0f + modifier;
+        speed = 10.0f + modifier;
     }
 
     // It is begin called every time our capsule hits something
     private void OnControllerColliderHit(ControllerColliderHit hit)
     {
-        if (hit.point.z > transform.position.z + (controller. radius /2) )
+        if (hit.gameObject.tag == "Enemy" )
             Death();
     }
 
