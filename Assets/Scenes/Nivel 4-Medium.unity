@@ -1577,7 +1577,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   restartDelay: 1
-  completeLeveUI: {fileID: 0}
+  completeLeveUI: {fileID: 158892844}
 --- !u!1 &462536653
 GameObject:
   m_ObjectHideFlags: 0
