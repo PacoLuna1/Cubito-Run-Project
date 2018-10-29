@@ -5,6 +5,6 @@ public class StartLevels : MonoBehaviour {
 
     public void StarGame()
     {
-        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
+        SceneManager.LoadScene("MenuLvls");
     }
 }
