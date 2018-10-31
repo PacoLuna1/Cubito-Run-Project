@@ -31,19 +31,15 @@ public class MovimientoJugador : MonoBehaviour {
         {
 
             FindObjectOfType<ColisionJugador>().movimientoSalto += 1;
-            Debug.Log(FindObjectOfType<ColisionJugador>().movimientoSalto);
+            
 
-            if (FindObjectOfType<ColisionJugador>().movimientoSalto == 1  )
+            if (FindObjectOfType<ColisionJugador>().movimientoSalto == 1 || FindObjectOfType<ColisionJugador>().movimientoSalto == 2)
             {
                 rb.AddForce(0, MovimientoArriba * Time.deltaTime, 0, ForceMode.VelocityChange);
                 
                     
             }
-            if(FindObjectOfType<ColisionJugador>().movimientoSalto == 2)
-            {
-                rb.AddForce(0, MovimientoArriba * Time.deltaTime, 0, ForceMode.VelocityChange);
-                
-            }
+            
             
 
         }
