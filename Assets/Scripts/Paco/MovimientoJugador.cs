@@ -3,10 +3,10 @@
 public class MovimientoJugador : MonoBehaviour {
     //This is a reference to the rigidbody component called "rb"
     public Rigidbody rb;
-    public float fuerzaAdelante = 2000f;
-    public float fuerzaLados = 500f;
+    public float fuerzaAdelante = 1000f;
+    public float fuerzaLados = 50f;
     public float MovimientoArriba = 500f;
-    public float MovimientoParar = 1000f;
+    public float MovimientoParar = 800f;
     
     // We marked this as "Fixed" Update because
     // we are using it to mess with physics
@@ -30,20 +30,16 @@ public class MovimientoJugador : MonoBehaviour {
         if (Input.GetKeyUp(KeyCode.W))
         {
 
-            FindObjectOfType<ColisionJugador>().movimientoSalto += 1;
-            Debug.Log(FindObjectOfType<ColisionJugador>().movimientoSalto);
+            FindObjectOfType<ColisionJugador>().movimientoSalto++;
+            
 
-            if (FindObjectOfType<ColisionJugador>().movimientoSalto == 1  )
+            if (FindObjectOfType<ColisionJugador>().movimientoSalto == 1 || FindObjectOfType<ColisionJugador>().movimientoSalto == 2)
             {
                 rb.AddForce(0, MovimientoArriba * Time.deltaTime, 0, ForceMode.VelocityChange);
                 
                     
             }
-            if(FindObjectOfType<ColisionJugador>().movimientoSalto == 2)
-            {
-                rb.AddForce(0, MovimientoArriba * Time.deltaTime, 0, ForceMode.VelocityChange);
-                
-            }
+            
             
 
         }
