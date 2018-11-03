@@ -19,8 +19,8 @@ public class ManejadorJuego : MonoBehaviour {
 
     public void GameOver()
     {
-        
-           
+
+
             if (JuegoTermino == false && muertes !=2 )
             {
                 muertes = muertes + 1;
@@ -28,18 +28,18 @@ public class ManejadorJuego : MonoBehaviour {
                 Invoke("Restart", restartDelay);
                  Debug.Log("Muertes pequeñas "+ muertes);
              }else if(JuegoTermino == false && muertes ==2) {
-                
+
                     JuegoTermino = true;
                     muertes = 0;
                     SceneManager.LoadScene("Menu");
                 Debug.Log("Muertes gameover " + muertes);
 
-                
+
             }
 
-        
-           
-                  
+
+
+
     }
 
     void Start()
@@ -56,7 +56,7 @@ public class ManejadorJuego : MonoBehaviour {
 
     void gameOverMenu()
     {
-        
+
         if (muertes == 1)
         {
             Destroy(corazonCubito2);
@@ -65,11 +65,20 @@ public class ManejadorJuego : MonoBehaviour {
         else if (muertes == 2)
         {
             Destroy(corazonCubito2);
-            Destroy(corazonCubito1);            
+            Destroy(corazonCubito1);
             Debug.Log(muertes);
         }
-        
+<<<<<<< HEAD
+
+=======
+        else if (muertes == 3)
+        {
+            Destroy(corazonCubito2);
+            Destroy(corazonCubito1);
+            Destroy(corazonCubito);
+            Debug.Log(muertes);
+        }
+>>>>>>> 612ad85901a2fa2581a3d84690325e9afde5efd0
     }
 
 }
-
