@@ -759,7 +759,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8dcd0e1a579f4354bb1b4082d6d9f371, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  manejadorJuego: {fileID: 435500189}
+  endscript: {fileID: 0}
 --- !u!65 &312123119
 BoxCollider:
   m_ObjectHideFlags: 0
