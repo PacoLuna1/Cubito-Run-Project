@@ -1,11 +1,11 @@
 ﻿using UnityEngine;
 
 public class EndTrigger : MonoBehaviour {
-    public ManejadorJuego manejadorJuego;
+    public Endscript endscript;
 
      void OnTriggerEnter()
     {
-        manejadorJuego.CompleteLevel();
+        endscript.CompleteLevel();
     }
 
 }
