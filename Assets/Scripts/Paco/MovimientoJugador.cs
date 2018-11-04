@@ -27,13 +27,19 @@ public class MovimientoJugador : MonoBehaviour {
             FindObjectOfType<ManejadorJuego>().GameOver();
         }
 
-        if (Input.GetKeyUp(KeyCode.W))
+        if (Input.GetKeyDown(KeyCode.W))
         {
 
             FindObjectOfType<ColisionJugador>().movimientoSalto++;
+            Debug.Log(FindObjectOfType<ColisionJugador>().movimientoSalto);
+
+            if (FindObjectOfType<ColisionJugador>().movimientoSalto == 1 )
+            {
+                rb.AddForce(0, MovimientoArriba * Time.deltaTime, 0, ForceMode.VelocityChange);
 
 
-            if (FindObjectOfType<ColisionJugador>().movimientoSalto == 1 || FindObjectOfType<ColisionJugador>().movimientoSalto == 2)
+            }
+            if(FindObjectOfType<ColisionJugador>().movimientoSalto == 2)
             {
                 rb.AddForce(0, MovimientoArriba * Time.deltaTime, 0, ForceMode.VelocityChange);
 

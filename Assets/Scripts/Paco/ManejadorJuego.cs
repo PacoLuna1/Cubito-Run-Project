@@ -66,19 +66,9 @@ public class ManejadorJuego : MonoBehaviour {
         {
             Destroy(corazonCubito2);
             Destroy(corazonCubito1);
-            Debug.Log(muertes);
+            Debug.Log(muertes); 
         }
-<<<<<<< HEAD
 
-=======
-        else if (muertes == 3)
-        {
-            Destroy(corazonCubito2);
-            Destroy(corazonCubito1);
-            Destroy(corazonCubito);
-            Debug.Log(muertes);
-        }
->>>>>>> 612ad85901a2fa2581a3d84690325e9afde5efd0
     }
 
 }
