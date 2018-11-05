@@ -35,7 +35,7 @@ public class MenuLevels : MonoBehaviour {
 
     public void toLevel4()
     {
-        SceneManager.LoadScene("Nivel 4-Hard");
+        SceneManager.LoadScene("Nivel 4-Medium");
     }
 
 

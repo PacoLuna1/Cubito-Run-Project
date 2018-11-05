@@ -7,6 +7,7 @@ TagManager:
   - Obstaculo
   - Escalones
   - Enemy
+  - vidas
   layers:
   - Default
   - TransparentFX
