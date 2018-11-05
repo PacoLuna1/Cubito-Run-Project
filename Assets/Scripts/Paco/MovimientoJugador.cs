@@ -42,7 +42,7 @@ public class MovimientoJugador : MonoBehaviour {
         {
             FindObjectOfType<ManejadorJuego>().GameOver();
         }
-       
+
         else{
 
             moveVector = Vector3.zero;
@@ -77,13 +77,13 @@ public class MovimientoJugador : MonoBehaviour {
             moveVector.z = speed;
             controller.Move(moveVector * Time.deltaTime);
         }
-    
+
 
       /*  if (Input.GetKey(KeyCode.W))
         {
 
             FindObjectOfType<ColisionJugador>().movimientoSalto++;
-            
+
 
             if (FindObjectOfType<ColisionJugador>().movimientoSalto == 1 )
             {
