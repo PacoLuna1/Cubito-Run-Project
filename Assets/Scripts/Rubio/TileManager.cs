@@ -8,7 +8,7 @@ public class TileManager : MonoBehaviour {
     private float spawnZ = 0.0f;
     private float length = 10.0f;
     private float safeZone = 20.0f;
-    private int amnTilesOnScreen = 10;
+    private int amnTilesOnScreen = 15;
     private int lastIndex = 0;
     private List<GameObject> activeTiles;
     
