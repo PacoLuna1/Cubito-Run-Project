@@ -6,8 +6,8 @@ public class PlayerMotor : MonoBehaviour {
     public Rigidbody player;
     private CharacterController controller;
     private Vector3 moveVector;
-    private float verticalVelocity = -1.0f;
-    private float speed = 10.0f;
+    private float verticalVelocity = -5.0f;
+    private float speed = 12.0f;
     private float gravity = 12.0f;
     private float animationDuration = 3.0f;
     private bool isDead = false;
@@ -18,7 +18,7 @@ public class PlayerMotor : MonoBehaviour {
         controller = GetComponent<CharacterController>();
         startTime = Time.time;
     }
-	
+
 	// Update is called once per frame
 	void Update () {
 
@@ -28,11 +28,9 @@ public class PlayerMotor : MonoBehaviour {
             return;
         } else
         {
-            Debug.Log("Que onda");
-
             if (isDead)
                 return;
-            Debug.Log("Que rollo");
+
             moveVector = Vector3.zero;
 
             if (controller.isGrounded)
@@ -45,7 +43,7 @@ public class PlayerMotor : MonoBehaviour {
             }
 
             // X value Left Rigth Desktop
-            moveVector.x = Input.GetAxisRaw("Horizontal") * speed;
+            moveVector.x = Input.GetAxisRaw("Horizontal") * (speed * 0.80f);
 
             // X value Left Rigth Phone
             if (Input.GetMouseButton(0))

@@ -15,7 +15,7 @@ public class Score : MonoBehaviour {
 	void Start () {
         scoreText.text = "???";
 	}
-	
+
 	// Update is called once per frame
 	void Update () {
         if (isDead)
@@ -25,7 +25,7 @@ public class Score : MonoBehaviour {
             LevelUp();
         score += Time.deltaTime * difficultyLevel;
         scoreText.text = ((int)score).ToString();
-     
+
 	}
 
     void LevelUp()

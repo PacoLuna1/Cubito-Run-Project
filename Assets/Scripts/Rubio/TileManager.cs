@@ -7,11 +7,11 @@ public class TileManager : MonoBehaviour {
     private Transform playerTransform;
     private float spawnZ = 0.0f;
     private float length = 10.0f;
-    private float safeZone = 20.0f;
-    private int amnTilesOnScreen = 15;
+    private float safeZone = 15.0f;
+    private int amnTilesOnScreen = 10;
     private int lastIndex = 0;
     private List<GameObject> activeTiles;
-    
+
 
     // Use this for initialization
     void Start() {
@@ -26,7 +26,7 @@ public class TileManager : MonoBehaviour {
                 SpawnTile();
         }
     }
-	
+
 	// Update is called once per frame
 	void Update () {
         if( (playerTransform.position.z - safeZone) > (spawnZ - amnTilesOnScreen * length))
@@ -34,7 +34,7 @@ public class TileManager : MonoBehaviour {
             SpawnTile();
             DeleteTile();
         }
-		
+
 	}
 
     private void SpawnTile (int prefabIndex = -1)
