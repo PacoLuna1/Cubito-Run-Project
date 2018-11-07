@@ -13,13 +13,14 @@ public class Score : MonoBehaviour {
 
 	// Use this for initialization
 	void Start () {
-        scoreText.text = "???";
+      
 	}
 
 	// Update is called once per frame
 	void Update () {
         if (isDead)
-            return ;
+          return ;
+
 
         if (score >= scoreToNextLevel)
             LevelUp();

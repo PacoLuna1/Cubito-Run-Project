@@ -28,8 +28,10 @@ public class PlayerMotor : MonoBehaviour {
             return;
         } else
         {
-            if (isDead)
+            if (isDead){
                 return;
+            }
+
 
             moveVector = Vector3.zero;
 
@@ -73,12 +75,16 @@ public class PlayerMotor : MonoBehaviour {
     // It is begin called every time our capsule hits something
     private void OnControllerColliderHit(ControllerColliderHit hit)
     {
-        if (hit.gameObject.tag == "Enemy" )
-            Death();
+        if (hit.gameObject.tag == "Enemy" ){
+          FindObjectOfType<AudioManager>().Play("dead");
+          Death();
+        }
+
     }
 
     private void Death()
     {
+      FindObjectOfType<AudioManager>().Stop("Theme");
         isDead = true;
         GetComponent<Score>().onDeath();
     }
