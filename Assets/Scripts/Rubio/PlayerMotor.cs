@@ -45,7 +45,10 @@ public class PlayerMotor : MonoBehaviour {
             }
 
             // X value Left Rigth Desktop
-            moveVector.x = Input.GetAxisRaw("Horizontal") * (speed * 0.80f);
+            if (GetComponent<Score>().score <= 160)
+              moveVector.x = Input.GetAxisRaw("Horizontal") * (speed * 0.80f);
+            else
+              moveVector.x = Input.GetAxisRaw("Horizontal") * (speed * 0.5f);
 
             // X value Left Rigth Phone
             if (Input.GetMouseButton(0))
