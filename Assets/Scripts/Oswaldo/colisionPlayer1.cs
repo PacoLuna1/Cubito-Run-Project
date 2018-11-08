@@ -6,9 +6,12 @@ public class colisionPlayer1 : MonoBehaviour {
 
     void OnCollisionEnter (Collision collisionInfo)
     {
-        if(collisionInfo.collider.tag == "Obstaculo")
+        if (collisionInfo.collider.tag == "Obstaculo")
         {
             movimiento.enabled = false;
+
+            FindObjectOfType<Endscript>().GameOver();
+
         }
     }
 	
