@@ -2,58 +2,29 @@
 
 public class movimientoPlayer : MonoBehaviour {
 
-    private CharacterController controller;
-    private Vector3 moveVector;
-    private float verticalVelocity = -1.0f;
-    private float speed = 10.0f;
-    private float gravity = 12.0f;
-    private float startTime;
-    private bool isDead = false;
-	
+    public Rigidbody rb;
+    public float fuerzaAdelante = 20f;
+    public float fuerzaLados = 50f;
+    public movimientoPlayer movimiento;
 
-    public void Start()
+    // We marked this as "Fixed" Update because
+    // we are using it to mess with physics
+    void FixedUpdate()
     {
-        controller = GetComponent<CharacterController>();
- 
-    }
-
-    void FixedUpdate () {
-
-        controller.Move(Vector3.forward * 5.0f * Time.deltaTime);
-
-        moveVector = Vector3.zero;
-
-        if (isDead)
-            return;
-
-        if (controller.isGrounded)
+        rb.AddForce(0, 0, fuerzaAdelante * Time.deltaTime ); // Add a force of 2000 on the z-axis
+                                                            // Add Time.deltaTime to express we want to move an object no matter the frames
+        if (Input.GetKey("d"))
         {
-            verticalVelocity = -5.0f;
+            rb.AddForce(fuerzaLados * Time.deltaTime, 0, 0, ForceMode.VelocityChange);
         }
-        else
+        if (Input.GetKey("a"))
         {
-            verticalVelocity -= gravity * Time.deltaTime;
+            rb.AddForce(-fuerzaLados * Time.deltaTime, 0, 0, ForceMode.VelocityChange);
         }
 
-
-        moveVector.x = Input.GetAxisRaw("Horizontal") * speed;
-
-        moveVector.y = verticalVelocity;
-
-        moveVector.z = speed;
-        controller.Move(moveVector * Time.deltaTime);        
-	}
-
-    private void OnControllerColliderHit(ControllerColliderHit hit)
-    {
-        if (hit.gameObject.tag == "Obstaculo")
-            Death();
+        if (rb.position.y < -10f)
+        {
+            FindObjectOfType<Endscript>().GameOver();
+        }
     }
-
-    private void Death()
-    {
-        Debug.Log("morii");
-        isDead = true;
-    }
-
 }
