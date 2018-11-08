@@ -1,60 +1,123 @@
 ﻿using UnityEngine;
 
 public class MovimientoJugador : MonoBehaviour {
-    //This is a reference to the rigidbody component called "rb"
-    public Rigidbody rb;
-    public float fuerzaAdelante = 1000f;
-    public float fuerzaLados = 50f;
-    public float MovimientoArriba = 500f;
-    public float MovimientoParar = 800f;
 
-    // We marked this as "Fixed" Update because
-    // we are using it to mess with physics
-    void FixedUpdate () {
-        rb.AddForce(0, 0, fuerzaAdelante * Time.deltaTime); // Add a force of 2000 on the z-axis
-                                                            // Add Time.deltaTime to express we want to move an object no matter the frames
-        if (Input.GetKey("d"))
-        {
-            rb.AddForce(fuerzaLados * Time.deltaTime, 0, 0,ForceMode.VelocityChange);
-        }
-        if (Input.GetKey("a"))
+    public Rigidbody rb;
+    private float fuerzaAdelante = 800f;
+    private float fuerzaLados = 50f;
+    private float MovimientoArriba = 500f;
+    private float MovimientoParar = 800f;
+
+    
+    // Phone
+    public void Izquierda()
+    {
+        
+        for (int i = 0; i < 4; i++)
         {
             rb.AddForce(-fuerzaLados * Time.deltaTime, 0, 0, ForceMode.VelocityChange);
+           
+
         }
-
-        if(rb.position.y < -20f)
+    }
+     public void Derecha()
+    {
+        
+        for(int i=0; i<4;i++)
         {
-            FindObjectOfType<ManejadorJuego>().GameOver();
+            rb.AddForce(fuerzaLados * Time.deltaTime, 0, 0, ForceMode.VelocityChange);
+            
+            
         }
+            
+        
+    }
 
-        if (Input.GetKeyDown(KeyCode.W))
+    public void Saltar()
+    {
+        FindObjectOfType<ColisionJugador>().movimientoSalto++;
+
+
+        if (FindObjectOfType<ColisionJugador>().movimientoSalto == 1)
         {
-
-            FindObjectOfType<ColisionJugador>().movimientoSalto++;
+            rb.AddForce(0, MovimientoArriba * Time.deltaTime, 0, ForceMode.VelocityChange);
             Debug.Log(FindObjectOfType<ColisionJugador>().movimientoSalto);
 
-            if (FindObjectOfType<ColisionJugador>().movimientoSalto == 1 )
-            {
-                rb.AddForce(0, MovimientoArriba * Time.deltaTime, 0, ForceMode.VelocityChange);
-
-
-            }
-            if(FindObjectOfType<ColisionJugador>().movimientoSalto == 2)
-            {
-                rb.AddForce(0, MovimientoArriba * Time.deltaTime, 0, ForceMode.VelocityChange);
-
-
-            }
-
-
-
         }
-
-
-        if (Input.GetKey("s"))
+        if (FindObjectOfType<ColisionJugador>().movimientoSalto == 2)
+        {
+            rb.AddForce(0, MovimientoArriba * Time.deltaTime, 0, ForceMode.VelocityChange);
+            Debug.Log(FindObjectOfType<ColisionJugador>().movimientoSalto);
+                
+        }
+    }
+   
+    public void Detener()
+    {
+        
+        for(int i=0; i<40; i++)
         {
             rb.AddForce(0, 0, -MovimientoParar * Time.deltaTime);
+          
         }
-
+        
+        
+       
+        
     }
+
+    // Computer
+    
+     void FixedUpdate()
+     {
+
+
+
+          rb.AddForce(0, 0, fuerzaAdelante * Time.deltaTime); 
+         if (Input.GetKey("d"))
+         {
+             rb.AddForce(fuerzaLados * Time.deltaTime, 0, 0, ForceMode.VelocityChange);
+           
+         }
+         if (Input.GetKey("a"))
+         {
+             rb.AddForce(-fuerzaLados * Time.deltaTime, 0, 0, ForceMode.VelocityChange);
+         }
+
+        
+        if (Input.GetKey(KeyCode.W) )
+         {
+           
+            FindObjectOfType<ColisionJugador>().movimientoSalto += 1;    
+                
+
+            if (FindObjectOfType<ColisionJugador>().movimientoSalto == 1)
+            {
+                rb.AddForce(0, MovimientoArriba * Time.deltaTime, 0, ForceMode.VelocityChange);
+               
+            }
+            if (FindObjectOfType<ColisionJugador>().movimientoSalto == 2)
+            {
+                rb.AddForce(0, MovimientoArriba * Time.deltaTime, 0, ForceMode.VelocityChange);
+                
+            }
+
+        }
+       
+
+         if (rb.position.y < -20f)
+         {
+             FindObjectOfType<ManejadorJuego>().GameOver();
+         }
+         if (Input.GetKey("s"))
+         {
+             rb.AddForce(0, 0, -MovimientoParar * Time.deltaTime);
+            
+         }
+
+
+ }
+ 
+
+
 }
