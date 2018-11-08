@@ -218,6 +218,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   restartDelay: 1
   completeLeveUI: {fileID: 0}
+  corazonCubito: {fileID: 0}
+  corazonCubito1: {fileID: 0}
+  corazonCubito2: {fileID: 0}
 --- !u!4 &435500190
 Transform:
   m_ObjectHideFlags: 0
@@ -642,10 +645,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   rb: {fileID: 642504441}
-  fuerzaAdelante: 2000
-  fuerzaLados: 500
+  fuerzaAdelante: 1200
+  fuerzaLados: 50
   MovimientoArriba: 500
-  MovimientoParar: 1000
+  MovimientoParar: 800
 --- !u!1 &643411614
 GameObject:
   m_ObjectHideFlags: 0
