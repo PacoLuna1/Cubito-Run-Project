@@ -3,7 +3,7 @@ using UnityEngine.UI;
 
 public class Score : MonoBehaviour {
     public Text scoreText;
-    private float score = 0.0f;
+    public float score = 0.0f;
     private  int difficultyLevel = 1;
     private int maxDifficultyLevel = 10;
     private int scoreToNextLevel = 10;
@@ -13,19 +13,19 @@ public class Score : MonoBehaviour {
 
 	// Use this for initialization
 	void Start () {
-        scoreText.text = "???";
 	}
-	
+
 	// Update is called once per frame
 	void Update () {
         if (isDead)
-            return ;
+          return ;
+
 
         if (score >= scoreToNextLevel)
             LevelUp();
         score += Time.deltaTime * difficultyLevel;
         scoreText.text = ((int)score).ToString();
-     
+
 	}
 
     void LevelUp()

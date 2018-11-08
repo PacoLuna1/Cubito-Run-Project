@@ -2,12 +2,14 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using UnityEngine.UI;
 
 public class MenuLevels : MonoBehaviour {
+    public Text highscoreText;
 
 	// Use this for initialization
 	void Start () {
-		
+        highscoreText.text = "Highscore: " + (int)PlayerPrefs.GetFloat("Highscore");
 	}
 	
 	// Update is called once per frame
@@ -17,13 +19,13 @@ public class MenuLevels : MonoBehaviour {
 
     public void toLevel1()
     {
-     //   SceneManager.LoadScene();
+        SceneManager.LoadScene("Level 2-Easy");
     }
 
 
     public void toLevel2()
     {
-     //   SceneManager.LoadScene();
+        SceneManager.LoadScene("Level 1-Easy");
     }
 
 

@@ -12,15 +12,18 @@ public class DeathMenu : MonoBehaviour {
 	void Start () {
         gameObject.SetActive(false);
 	}
-	
+
 	// Update is called once per frame
 	void Update () {
         if (!isShowed)
             return;
+
+      transition += Time.deltaTime;
+      background.color = Color.Lerp(new Color(0,0,0,0), Color.black, transition);
 	}
 
     public void ToggleEndMenu (float score)
-    { 
+    {
         gameObject.SetActive(true);
         scoreText.text = "Final Score: " + ((int)score).ToString();
         isShowed = true;
