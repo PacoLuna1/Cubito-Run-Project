@@ -3,9 +3,9 @@
 public class movimientoPlayer : MonoBehaviour {
 
     public Rigidbody rb;
-    public float fuerzaAdelante = 20f;
+    public float fuerzaAdelante = 200f;
     public float fuerzaLados = 50f;
-    public movimientoPlayer movimiento;
+    
 
     // We marked this as "Fixed" Update because
     // we are using it to mess with physics
