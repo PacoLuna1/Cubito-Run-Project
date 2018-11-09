@@ -26,5 +26,13 @@ public class movimientoPlayer : MonoBehaviour {
         {
             FindObjectOfType<Endscript>().GameOver();
         }
+
+        if (Input.GetMouseButton(0))
+        {
+            if (Input.mousePosition.x > Screen.width / 2)
+                rb.AddForce(fuerzaLados * Time.deltaTime, 0, 0, ForceMode.VelocityChange);
+            else
+                rb.AddForce(-fuerzaLados * Time.deltaTime, 0, 0, ForceMode.VelocityChange);
+        }
     }
 }
