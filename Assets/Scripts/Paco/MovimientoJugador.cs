@@ -4,33 +4,28 @@ public class MovimientoJugador : MonoBehaviour {
 
     public Rigidbody rb;
     private float fuerzaAdelante = 800f;
-    private float fuerzaLados = 150f;
-    private float MovimientoArriba = 300f;
-    private float MovimientoParar = 500f;
+    private float fuerzaLados = 400f;
+    private float MovimientoArriba = 400f;
+    private float MovimientoParar = 150f;
     
     
     // Phone
     public void Izquierda()
     {
         
-        for (int i = 0; i < 4; i++)
-        {
+        
             rb.AddForce(-fuerzaLados * Time.deltaTime, 0, 0, ForceMode.VelocityChange);
            
 
-        }
+        
     }
      public void Derecha()
     {
         
-        for(int i=0; i<4;i++)
-        {
+        
             rb.AddForce(fuerzaLados * Time.deltaTime, 0, 0, ForceMode.VelocityChange);
             
             
-        }
-            
-        
     }
 
     public void Saltar()
@@ -41,39 +36,44 @@ public class MovimientoJugador : MonoBehaviour {
         if (FindObjectOfType<ColisionJugador>().movimientoSalto == 1)
         {
             rb.AddForce(0, MovimientoArriba * Time.deltaTime, 0, ForceMode.VelocityChange);
-            Debug.Log(FindObjectOfType<ColisionJugador>().movimientoSalto);
+           
 
         }
         if (FindObjectOfType<ColisionJugador>().movimientoSalto == 2)
         {
             rb.AddForce(0, MovimientoArriba * Time.deltaTime, 0, ForceMode.VelocityChange);
-            Debug.Log(FindObjectOfType<ColisionJugador>().movimientoSalto);
+            
                 
         }
     }
    
     public void Detener()
     {
-
-        fuerzaAdelante = 0f;
        
+            if (rb.velocity.z > 0f)
+            {
+                rb.AddForce(0, 0, -MovimientoParar * Time.deltaTime,ForceMode.VelocityChange);
+            }
+        
+
 
     }
-    private void Update()
-    {
-        fuerzaAdelante = 800f;
-    }
+    
 
-
-    void FixedUpdate()
+    void Update()
     {
+        if (fuerzaAdelante == 0f)
+        {
+            fuerzaAdelante = 400f;
+        }
         rb.AddForce(0, 0, fuerzaAdelante * Time.deltaTime);
         
         if (rb.position.y < -20f)
         {
             FindObjectOfType<ManejadorJuego>().GameOver();
         }
-         
+
+        
     }
 
     // Computer

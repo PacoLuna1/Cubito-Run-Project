@@ -8,10 +8,12 @@ public class OnHoldButton : MonoBehaviour, IPointerDownHandler, IPointerUpHandle
 {
     public UnityEvent OnHold;
     bool IsHolding;
+    public int timehold=0;
 
     public void OnPointerDown(PointerEventData eventData)
     {
         IsHolding = true;
+        timehold++;
     }
 
     public void OnPointerUp(PointerEventData eventData)
