@@ -7,10 +7,10 @@ public class PlayerMotor : MonoBehaviour {
     private CharacterController controller;
     private Vector3 moveVector;
     private float verticalVelocity = -5.0f;
-    private float speed = 12.0f;
+    public float speed = 12.0f;
     private float gravity = 12.0f;
     private float animationDuration = 3.0f;
-    private bool isDead = false;
+    public bool isDead = false;
     private float startTime;
 
 	// Use this for initialization
