@@ -5,7 +5,7 @@ public class complete : MonoBehaviour {
 
 	public void loadNextLevel ()
     {
-        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex+1);
+        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
     }
 
 }

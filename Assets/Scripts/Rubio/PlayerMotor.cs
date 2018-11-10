@@ -50,15 +50,15 @@ public class PlayerMotor : MonoBehaviour {
             else
               moveVector.x = Input.GetAxisRaw("Horizontal") * (speed * 0.5f);
 
-            // X value Left Rigth Phone
-            if (Input.GetMouseButton(0))
-            {
-                // Rigth side of the screen
-                if (Input.mousePosition.x > Screen.width / 2)
-                    moveVector.x = speed;
-                else
-                    moveVector.x = -speed;
-            }
+            // // X value Left Rigth Phone
+            // if (Input.GetMouseButton(0))
+            // {
+            //     // Rigth side of the screen
+            //     if (Input.mousePosition.x > Screen.width / 2)
+            //         moveVector.x = speed;
+            //     else
+            //         moveVector.x = -speed;
+            // }
 
             // Y value Up Down
             moveVector.y = verticalVelocity;
