@@ -4,33 +4,28 @@ public class MovimientoJugador : MonoBehaviour {
 
     public Rigidbody rb;
     private float fuerzaAdelante = 800f;
-    private float fuerzaLados = 50f;
-    private float MovimientoArriba = 500f;
-    private float MovimientoParar = 800f;
-
+    private float fuerzaLados = 400f;
+    private float MovimientoArriba = 400f;
+    private float MovimientoParar = 150f;
+    
     
     // Phone
     public void Izquierda()
     {
         
-        for (int i = 0; i < 4; i++)
-        {
+        
             rb.AddForce(-fuerzaLados * Time.deltaTime, 0, 0, ForceMode.VelocityChange);
            
 
-        }
+        
     }
      public void Derecha()
     {
         
-        for(int i=0; i<4;i++)
-        {
+        
             rb.AddForce(fuerzaLados * Time.deltaTime, 0, 0, ForceMode.VelocityChange);
             
             
-        }
-            
-        
     }
 
     public void Saltar()
@@ -41,83 +36,98 @@ public class MovimientoJugador : MonoBehaviour {
         if (FindObjectOfType<ColisionJugador>().movimientoSalto == 1)
         {
             rb.AddForce(0, MovimientoArriba * Time.deltaTime, 0, ForceMode.VelocityChange);
-            Debug.Log(FindObjectOfType<ColisionJugador>().movimientoSalto);
+           
 
         }
         if (FindObjectOfType<ColisionJugador>().movimientoSalto == 2)
         {
             rb.AddForce(0, MovimientoArriba * Time.deltaTime, 0, ForceMode.VelocityChange);
-            Debug.Log(FindObjectOfType<ColisionJugador>().movimientoSalto);
+            
                 
         }
     }
    
     public void Detener()
     {
-        
-        for(int i=0; i<40; i++)
-        {
-            rb.AddForce(0, 0, -MovimientoParar * Time.deltaTime);
-          
-        }
-        
-        
        
+            if (rb.velocity.z > 0f)
+            {
+                rb.AddForce(0, 0, -MovimientoParar * Time.deltaTime,ForceMode.VelocityChange);
+            }
+        
+
+
+    }
+    
+
+    void Update()
+    {
+        if (fuerzaAdelante == 0f)
+        {
+            fuerzaAdelante = 400f;
+        }
+        rb.AddForce(0, 0, fuerzaAdelante * Time.deltaTime);
+        
+        if (rb.position.y < -20f)
+        {
+            FindObjectOfType<ManejadorJuego>().GameOver();
+        }
+
         
     }
 
     // Computer
-    
-     void FixedUpdate()
-     {
+
+/* void Update()
+  {
 
 
 
-          rb.AddForce(0, 0, fuerzaAdelante * Time.deltaTime); 
-         if (Input.GetKey("d"))
+     rb.AddForce(0, 0, fuerzaAdelante * Time.deltaTime);
+     if (Input.GetKey("d"))
+      {
+          rb.AddForce(fuerzaLados * Time.deltaTime, 0, 0, ForceMode.VelocityChange);
+
+      }
+      if (Input.GetKey("a"))
+      {
+          rb.AddForce(-fuerzaLados * Time.deltaTime, 0, 0, ForceMode.VelocityChange);
+      }
+
+
+     if (Input.GetKey(KeyCode.W) )
+      {
+
+         FindObjectOfType<ColisionJugador>().movimientoSalto += 1;    
+
+
+         if (FindObjectOfType<ColisionJugador>().movimientoSalto == 1)
          {
-             rb.AddForce(fuerzaLados * Time.deltaTime, 0, 0, ForceMode.VelocityChange);
-           
+             rb.AddForce(0, MovimientoArriba * Time.deltaTime, 0, ForceMode.VelocityChange);
+
          }
-         if (Input.GetKey("a"))
+         if (FindObjectOfType<ColisionJugador>().movimientoSalto == 2)
          {
-             rb.AddForce(-fuerzaLados * Time.deltaTime, 0, 0, ForceMode.VelocityChange);
-         }
+             rb.AddForce(0, MovimientoArriba * Time.deltaTime, 0, ForceMode.VelocityChange);
 
-        
-        if (Input.GetKey(KeyCode.W) )
-         {
-           
-            FindObjectOfType<ColisionJugador>().movimientoSalto += 1;    
-                
-
-            if (FindObjectOfType<ColisionJugador>().movimientoSalto == 1)
-            {
-                rb.AddForce(0, MovimientoArriba * Time.deltaTime, 0, ForceMode.VelocityChange);
-               
-            }
-            if (FindObjectOfType<ColisionJugador>().movimientoSalto == 2)
-            {
-                rb.AddForce(0, MovimientoArriba * Time.deltaTime, 0, ForceMode.VelocityChange);
-                
-            }
-
-        }
-       
-
-         if (rb.position.y < -20f)
-         {
-             FindObjectOfType<ManejadorJuego>().GameOver();
-         }
-         if (Input.GetKey("s"))
-         {
-             rb.AddForce(0, 0, -MovimientoParar * Time.deltaTime);
-            
          }
 
+     }
 
- }
- 
+
+      if (rb.position.y < -20f)
+      {
+          FindObjectOfType<ManejadorJuego>().GameOver();
+      }
+      if (Input.GetKey("s"))
+      {
+          rb.AddForce(0, 0, -MovimientoParar * Time.deltaTime);
+
+      }
+
+
+}
+*/
 
 
 }
