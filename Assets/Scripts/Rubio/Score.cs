@@ -10,7 +10,6 @@ public class Score : MonoBehaviour {
     private bool isDead = false;
     public DeathMenu deathMenu;
 
-
 	// Use this for initialization
 	void Start () {
 	}

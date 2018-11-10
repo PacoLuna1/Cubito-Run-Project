@@ -19,13 +19,13 @@ public class MenuLevels : MonoBehaviour {
 
     public void toLevel1()
     {
-        SceneManager.LoadScene("Level 2-Easy");
+        SceneManager.LoadScene("Level 1-Easy");
     }
 
 
     public void toLevel2()
     {
-        SceneManager.LoadScene("Level 1-Easy");
+        SceneManager.LoadScene("Level 2-Easy");
     }
 
 
