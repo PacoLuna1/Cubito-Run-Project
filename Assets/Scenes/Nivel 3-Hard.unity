@@ -324,7 +324,7 @@ GameObject:
   - component: {fileID: 36162988}
   m_Layer: 0
   m_Name: AsteroidElectric_Yellow1
-  m_TagString: Untagged
+  m_TagString: Obstaculo
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -414,7 +414,7 @@ GameObject:
   - component: {fileID: 42419933}
   m_Layer: 0
   m_Name: AsteroidElectric_Yellow1 (6)
-  m_TagString: Untagged
+  m_TagString: Obstaculo
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -689,7 +689,7 @@ GameObject:
   - component: {fileID: 59475511}
   m_Layer: 0
   m_Name: AsteroidRocky_Blue3
-  m_TagString: Untagged
+  m_TagString: Obstaculo
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1509,7 +1509,7 @@ GameObject:
   - component: {fileID: 149896236}
   m_Layer: 0
   m_Name: AsteroidElectric_Red3
-  m_TagString: Untagged
+  m_TagString: Obstaculo
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -2420,7 +2420,7 @@ GameObject:
   - component: {fileID: 327421888}
   m_Layer: 0
   m_Name: Asteroid_Grey2
-  m_TagString: Untagged
+  m_TagString: Obstaculo
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -3717,7 +3717,7 @@ GameObject:
   - component: {fileID: 530175861}
   m_Layer: 0
   m_Name: AsteroidRocky_Grey5
-  m_TagString: Untagged
+  m_TagString: Obstaculo
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -8620,7 +8620,7 @@ GameObject:
   - component: {fileID: 558626441}
   m_Layer: 0
   m_Name: Landing straight (2)
-  m_TagString: Untagged
+  m_TagString: Escalones
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -23439,7 +23439,7 @@ GameObject:
   - component: {fileID: 728629636}
   m_Layer: 0
   m_Name: AsteroidLava_Violet5
-  m_TagString: Untagged
+  m_TagString: Obstaculo
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -23808,7 +23808,7 @@ GameObject:
   - component: {fileID: 761890225}
   m_Layer: 0
   m_Name: Asteroid_Brown6
-  m_TagString: Untagged
+  m_TagString: Obstaculo
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -28884,7 +28884,7 @@ GameObject:
   - component: {fileID: 837251248}
   m_Layer: 0
   m_Name: AsteroidLava_Green1 (1)
-  m_TagString: Untagged
+  m_TagString: Obstaculo
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -29543,7 +29543,7 @@ GameObject:
   - component: {fileID: 998409789}
   m_Layer: 0
   m_Name: AsteroidElectric_Violet1 (1)
-  m_TagString: Untagged
+  m_TagString: Obstaculo
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -39745,7 +39745,7 @@ GameObject:
   - component: {fileID: 1214196467}
   m_Layer: 0
   m_Name: Asteroid_Brown1
-  m_TagString: Untagged
+  m_TagString: Obstaculo
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -39821,7 +39821,7 @@ GameObject:
   - component: {fileID: 1226101745}
   m_Layer: 0
   m_Name: AsteroidLava_Violet4
-  m_TagString: Untagged
+  m_TagString: Obstaculo
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -40095,7 +40095,7 @@ GameObject:
   - component: {fileID: 1247478743}
   m_Layer: 0
   m_Name: Asteroid_Brown3
-  m_TagString: Untagged
+  m_TagString: Obstaculo
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -40584,7 +40584,7 @@ GameObject:
   - component: {fileID: 1291991795}
   m_Layer: 0
   m_Name: AsteroidLava_Violet5 (1)
-  m_TagString: Untagged
+  m_TagString: Obstaculo
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -47246,7 +47246,7 @@ GameObject:
   - component: {fileID: 1737225622}
   m_Layer: 0
   m_Name: AsteroidElectric_Red5 (3)
-  m_TagString: Untagged
+  m_TagString: Obstaculo
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -53154,7 +53154,7 @@ GameObject:
   - component: {fileID: 1920265225}
   m_Layer: 0
   m_Name: AsteroidRocky_Orange4
-  m_TagString: Untagged
+  m_TagString: Obstaculo
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
