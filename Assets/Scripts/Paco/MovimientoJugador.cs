@@ -8,6 +8,7 @@ public class MovimientoJugador : MonoBehaviour {
     private float MovimientoArriba = 300f;
     private float MovimientoParar = 800f;
 
+
     //
     // // Phone
     // public void Izquierda()
